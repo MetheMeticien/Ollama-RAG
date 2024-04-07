@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat with AI</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f7f6;
+        }
+        #chatContainer {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+        }
+        #chat {
+            padding: 20px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        .message {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        #inputArea {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+        #userInput {
+            width: calc(100% - 90px);
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script type="text/javascript">
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        function sendMessage() {
+            var input = document.getElementById("userInput").value;
+            socket.emit('send_message', {message: input});
+            document.getElementById("userInput").value = '';
+            // Add a new div for each user input to start a new line for AI response
+            var chat = document.getElementById("chat");
+            var userMsgDiv = document.createElement("div");
+            userMsgDiv.textContent = "You: " + input;
+            chat.appendChild(userMsgDiv);
+        }
+
+        socket.on('receive_message', function(data) {
+            var chat = document.getElementById("chat");
+            // Check if the last element is a response (to avoid adding to user input)
+            var lastElement = chat.lastElementChild;
+            if (!lastElement || lastElement.id !== "response") {
+                var responseDiv = document.createElement("div");
+                responseDiv.id = "response"; // Mark this div for the response
+                chat.appendChild(responseDiv);
+            }
+            // Append the text to the last response div
+            lastElement = chat.lastElementChild;
+            lastElement.textContent += data.message + ' ';
+            chat.scrollTop = chat.scrollHeight; // Scroll to the bottom
+        });
+    </script>
+</head>
+<body>
+    <div id="chatContainer">
+        <div id="chat"></div>
+        <div id="inputArea">
+            <input id="userInput" type="text" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</body>
+</html>

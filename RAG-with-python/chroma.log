@@ -1,0 +1,399 @@
+[33mWARNING[0m:  [07-04-2024 17:01:20] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [07-04-2024 17:01:21] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [07-04-2024 17:01:21] Starting component System
+[36mDEBUG[0m:    [07-04-2024 17:01:21] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [07-04-2024 17:01:21] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [07-04-2024 17:01:21] Starting component SqliteDB
+[36mDEBUG[0m:    [07-04-2024 17:01:22] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [07-04-2024 17:01:22] Starting component Posthog
+[36mDEBUG[0m:    [07-04-2024 17:01:22] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [07-04-2024 17:01:22] Starting component SegmentAPI
+[32mINFO[0m:     [07-04-2024 17:01:23] Started server process [[36m11272[0m]
+[32mINFO[0m:     [07-04-2024 17:01:23] Waiting for application startup.
+[32mINFO[0m:     [07-04-2024 17:01:23] Application startup complete.
+[32mINFO[0m:     [07-04-2024 17:01:23] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [07-04-2024 17:01:33] ::1:49616 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:01:33] ::1:49616 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[31mERROR[0m:    [07-04-2024 17:01:33] Collection buildragwithpython does not exist.
+Traceback (most recent call last):
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\streams\memory.py", line 97, in receive
+    return self.receive_nowait()
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\streams\memory.py", line 92, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\streams\memory.py", line 112, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 165, in call_next
+    raise app_exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 165, in call_next
+    raise app_exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 74, in app
+    response = await func(request)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2134, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 851, in run
+    result = context.run(func, *args)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\server\fastapi\__init__.py", line 479, in delete_collection
+    return self._api.delete_collection(
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\api\segment.py", line 347, in delete_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection buildragwithpython does not exist.
+[32mINFO[0m:     [07-04-2024 17:01:33] ::1:49617 - "DELETE /api/v1/collections/buildragwithpython?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [07-04-2024 17:03:03] ::1:49644 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:03:03] ::1:49644 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[31mERROR[0m:    [07-04-2024 17:03:03] Collection buildragwithpython does not exist.
+Traceback (most recent call last):
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\streams\memory.py", line 97, in receive
+    return self.receive_nowait()
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\streams\memory.py", line 92, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\streams\memory.py", line 112, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 165, in call_next
+    raise app_exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 165, in call_next
+    raise app_exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 74, in app
+    response = await func(request)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2134, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 851, in run
+    result = context.run(func, *args)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\server\fastapi\__init__.py", line 440, in get_collection
+    return self._api.get_collection(
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\rifat\AppData\Local\Programs\Python\Python310\lib\site-packages\chromadb\api\segment.py", line 261, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection buildragwithpython does not exist.
+[32mINFO[0m:     [07-04-2024 17:03:03] ::1:49645 - "GET /api/v1/collections/buildragwithpython?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [07-04-2024 17:03:19] ::1:49649 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:03:19] ::1:49649 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:03:20] ::1:49650 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:05:08] ::1:49725 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:05:08] ::1:49725 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:05:08] ::1:49726 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:05:20] ::1:49732 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:05:20] ::1:49732 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:05:20] ::1:49733 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:07:05] ::1:49758 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:07:05] ::1:49758 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:07:05] ::1:49759 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:07:11] ::1:49759 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [07-04-2024 17:07:11] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [07-04-2024 17:07:11] ::1:49759 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:07:12] ::1:49759 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:07:12] ::1:49759 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:07:12] ::1:49759 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:07:12] ::1:49759 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:07:12] ::1:49759 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:32] ::1:49799 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:08:32] ::1:49799 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:08:32] ::1:49800 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:08:32] ::1:49800 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:08:33] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:33] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:33] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:33] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:33] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:33] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:34] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:34] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:34] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:34] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:34] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:34] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:35] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:35] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:35] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:35] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:35] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:35] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:36] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:36] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:36] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:36] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:36] ::1:49800 - "POST /api/v1/collections/76bb2e18-edbc-4ddf-bccc-95490e19862a/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:43] ::1:49809 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:08:43] ::1:49809 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:08:43] ::1:49810 - "DELETE /api/v1/collections/buildragwithpython?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:08:44] ::1:49810 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:08:44] ::1:49810 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [07-04-2024 17:08:44] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [07-04-2024 17:08:44] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:44] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:44] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:44] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:45] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:45] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:45] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:45] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:45] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:45] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:46] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:46] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:46] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:46] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:46] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:46] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:46] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:47] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:47] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:47] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:47] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:47] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:08:47] ::1:49810 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:09:07] ::1:49817 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:09:07] ::1:49817 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:09:07] ::1:49818 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:09:07] ::1:49818 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:10:14] ::1:49832 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:10:14] ::1:49832 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:10:14] ::1:49833 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:10:18] ::1:49833 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:13:49] ::1:49896 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:13:49] ::1:49896 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:13:49] ::1:49897 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:13:57] ::1:49897 - "POST /api/v1/collections/8965a763-f0cc-4067-bf32-5b8a898bec45/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:15:55] ::1:49987 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:15:55] ::1:49987 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:15:55] ::1:49988 - "DELETE /api/v1/collections/buildragwithpython?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:15:55] ::1:49988 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:15:59] ::1:49988 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [07-04-2024 17:15:59] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [07-04-2024 17:16:00] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:00] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:00] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:00] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:01] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:01] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:01] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:01] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:02] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:02] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:02] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:02] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:02] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:02] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:03] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:03] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:03] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:03] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:03] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:03] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:04] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:04] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:04] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:04] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:04] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:04] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:04] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:05] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:05] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:05] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:05] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:05] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:05] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:05] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:06] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:06] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:06] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:06] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:06] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:06] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:07] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:07] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:07] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:07] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:07] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:07] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:08] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:08] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:08] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:09] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:09] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:09] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:09] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:10] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:10] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:10] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:10] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:10] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:11] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:11] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:11] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:11] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:12] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:12] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:12] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:12] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:13] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:13] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:13] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:13] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:13] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:14] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:14] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:14] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:14] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:14] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:14] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:15] ::1:49988 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/add HTTP/1.1" 201
+[32mINFO[0m:     [07-04-2024 17:16:21] ::1:49995 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:16:21] ::1:49995 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:16:21] ::1:49996 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:16:21] ::1:49996 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:16:41] ::1:50003 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:16:41] ::1:50003 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:16:41] ::1:50004 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:16:42] ::1:50004 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:17:33] ::1:50014 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:17:33] ::1:50014 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:17:33] ::1:50015 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:17:34] ::1:50015 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:18:32] ::1:50021 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:18:32] ::1:50021 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:18:32] ::1:50022 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:18:33] ::1:50022 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:19:02] ::1:50029 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:19:02] ::1:50029 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:19:02] ::1:50030 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:19:03] ::1:50030 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:20:16] ::1:50039 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:20:16] ::1:50039 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:20:16] ::1:50040 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:20:17] ::1:50040 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:20:30] ::1:50045 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:20:30] ::1:50045 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:20:30] ::1:50046 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:20:31] ::1:50046 - "POST /api/v1/collections/b32fd3bb-d6c7-4e99-b682-cb7f0d551d10/query HTTP/1.1" 200
+[32mINFO[0m:     [07-04-2024 17:22:51] Shutting down
+[32mINFO[0m:     [07-04-2024 17:22:51] Waiting for application shutdown.
+[36mDEBUG[0m:    [07-04-2024 17:22:51] Stopping component System
+[36mDEBUG[0m:    [07-04-2024 17:22:51] Stopping component SegmentAPI
+[36mDEBUG[0m:    [07-04-2024 17:22:51] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [07-04-2024 17:22:51] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [07-04-2024 17:22:51] Stopping component Posthog
+[36mDEBUG[0m:    [07-04-2024 17:22:51] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [07-04-2024 17:22:51] Stopping component SqliteDB
+[36mDEBUG[0m:    [07-04-2024 17:22:52] Stopping component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [07-04-2024 17:22:52] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [07-04-2024 17:22:52] Application shutdown complete.
+[32mINFO[0m:     [07-04-2024 17:22:52] Finished server process [[36m11272[0m]

@@ -1,0 +1,1 @@
+../scripts/outputs_only_text.txt 
